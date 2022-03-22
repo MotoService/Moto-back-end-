@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 //+customers
 const { getCustomers, customerSignup, deleteCustomers, customerLogin } = require('../logic/MotoristService_customers');
+router.get('/test', getCustomers);
 router.get('/customers', getCustomers);
 router.post('/customers/register', customerSignup);
 router.delete('/customers/:id', deleteCustomers);
