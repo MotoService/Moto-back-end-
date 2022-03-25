@@ -14,6 +14,8 @@ module.exports = {
                     name: res.name,
                     email: res.email,
                     password: res.password,
+                    longitude: res.longitude,
+                    latitude: res.latitude,
 
                 }
             })
@@ -37,7 +39,8 @@ module.exports = {
             email: req.body.email,
             password: hashedPassword,
             phone: req.body.phone,
-
+            longitude: req.body.longitude,
+            latitude: req.body.latitude,
         });
         //return the creation process status (saved or error)
         try {
