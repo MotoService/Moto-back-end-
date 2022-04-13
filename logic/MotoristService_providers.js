@@ -5,6 +5,18 @@ const ms = require('../model/MotoristService_providers');
 const bcrypt = require('bcryptjs');
 const { registerValidation, loginValidation } = require('../validation/providers_validation')
 module.exports = {
+    getProviderslatlng: async (req, res, next) => {
+        const providersSchema = await ms.find();
+        res.json({
+            result: providersSchema.map(res => {
+                return {
+                    ln: res.longitude,
+                    lat: res.latitude,
+                }
+
+            })
+        })
+    },
     getProviders: async (req, res, next) => {
         const providersSchema = await ms.find();
         res.json({
@@ -81,3 +93,4 @@ module.exports = {
 
     }
 }
+console.log(this.getProviderslatlng);
